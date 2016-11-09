@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home work 2. Task 1</title>
+	<link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+</head>
+<body>
+	<h2>Задание номер раз!</h2>
+
+	<p>Написать функцию 'isAllTrue', которая принимает 2 параметра - 'source' и 'filterFn'</p>
+
+	<p>source - массив<br>'filterFn' - фильтрующая функция</p>
+
+	<p>Если фильтрующая функция вернет 'true' для ВСЕХ элементов массива, то и сама 'isAllTrue' вернет 'true'<br>Если фильтрующая функция вернет 'false' хотя бы для одного элемента массива, то и сама 'isAllTrue' вернет 'false'</p>
+
+	<p>пример:</p>
+
+	<p>var allNumbers = [1, 2, 4, 5, 6, 7, 8],</p>
+
+	<p>someNumbers = [1, 2, 'привет', 4, 5, 'loftschool', 6, 7, 8],</p>
+
+	<p>noNumbers = ['это', 'массив', 'без', 'чисел'];</p>
+
+	<p>function isNumber(val) {
+
+	  return typeof val === 'number';
+
+	}</p>
+
+	console.log(isAllTrue(allNumbers, isNumber)); //вернет true<br>
+	console.log(isAllTrue(someNumbers, isNumber)); //вернет false<br>
+	console.log(isAllTrue(noNumbers, isNumber)); //вернет false
+
+	<p>Выбрасывать и обрабатывать исключение, если в 'source' пустой массив.</p>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
