@@ -3,18 +3,15 @@ var allNumbers = [1, 2, 4, 5, 6, 7, 8],
 	noNumbers = ['это', 'массив', 'без', 'чисел'];
 
 function isAllTrue (source, filterFn) {
-	try{
-		if(!source.length) {
-			throw new Error("Пустой массив!!! Oбратитесь к администратору, ему скучно :)");
-		}else{
-			for (var i = 0; i < source.length; i++) {
-				if(!filterFn(source[i])) return false;
-			}
-		}
-		return true;
-	}catch(e){
-		return e.message;
+	
+	if(!source.length)
+		throw new Error("Пустой массив!!! Oбратитесь к администратору, ему скучно :)");
+
+	for (var i = 0; i < source.length; i++) {
+		if(!filterFn(source[i])) return false;
 	}
+	
+	return true;
 }
 
 function isNumber(val) {
@@ -22,11 +19,16 @@ function isNumber(val) {
 }
 
 
+try{
 
-console.log(isAllTrue(allNumbers, isNumber)); //вернет true
+	console.log(isAllTrue(allNumbers, isNumber)); //вернет true
 
-console.log(isAllTrue(someNumbers, isNumber)); //вернет false
+	console.log(isAllTrue(someNumbers, isNumber)); //вернет false
 
-console.log(isAllTrue(noNumbers, isNumber)); //вернет false
+	console.log(isAllTrue(noNumbers, isNumber)); //вернет false
 
-console.log(isAllTrue([], isNumber)); //вернет сообщение исключения
+	console.log(isAllTrue([], isNumber)); //вернет сообщение исключения
+
+}catch(e){
+	console.log( e.message );
+}
