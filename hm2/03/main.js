@@ -3,7 +3,20 @@ function calculator (firstNumber) {
 	function action(arg, str ){
 		var temp = firstNumber;
 		for (var i = 0; i < arg.length; i++) {
-			temp = eval(temp+str+arg[i])
+			switch(str){
+				case "+":
+					temp += arg[i];
+					break;
+				case "-":
+					temp -= arg[i];
+					break;
+				case "/":
+					temp /= arg[i];
+					break;
+				case "*":
+					temp *= arg[i];
+					break;
+			}
 		};
 		return temp;
 	}
