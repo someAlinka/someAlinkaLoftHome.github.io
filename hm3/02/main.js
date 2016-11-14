@@ -37,6 +37,7 @@ var objB = {
 
 
 function deepEqual (objA, objB) {
+    if(objA == null || objB == null) return false;
     if(objA == objB) return true;
 
     if(objA instanceof Date && objA instanceof Date){
@@ -53,6 +54,7 @@ function deepEqual (objA, objB) {
     }
     
     if(typeof objA == 'object' &&  typeof objB == 'object'){
+
         for(propertry in objA){
             if(!objB.hasOwnProperty(propertry)) return false;
             
