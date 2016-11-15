@@ -1,10 +1,5 @@
 function prepend(container, newElement){
-	var childs = container.children;
-	var htmlInner = newElement.outerHTML;
-	for(child of childs){
-		htmlInner += child.outerHTML;
-	}
-	container.innerHTML = htmlInner;
+	container.insertBefore(newElement, container.firstElementChild)
 }
 
 var doc = document;
