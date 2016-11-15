@@ -45,18 +45,16 @@ function reduce (arr, callback, initialValue) {
 	if(arr.length == 1 && initialValue === undefined) return arr[0];
 	if(!arr.length && initialValue !== undefined) return initialValue;
 
-	var res = 0;
-	for (var k = 0; k < arr.length; k++) {
-		if(!k){
-			if(initialValue !== undefined && arr[k] !== undefined){
-				res = callback(initialValue, arr[k], k, arr);
-			}else if(arr[0] !== undefined && arr[1] !== undefined){
-				res = callback(arr[0], arr[1], k, arr);
-				k++;
-			}
-		}else{
-			if(arr[k] !== undefined ) res = callback(res, arr[k], k, arr);
-		}
+	var res = 0, k = 1;
+	if(initialValue !== undefined && arr[0] !== undefined){
+		res = callback(initialValue, arr[0], 0, arr);
+	}else if(arr[0] !== undefined && arr[1] !== undefined){
+		res = callback(arr[0], arr[1], 1, arr);
+		k++;
+	}
+
+	for (; k < arr.length; k++) {
+		if(arr[k] !== undefined ) res = callback(res, arr[k], k, arr);
 	};
 	return res;
 }
@@ -108,7 +106,7 @@ function splice (start, deleteCount, ...insertItems) {
 
 
 try{
-	console.log("forEach ___________________________");
+	/*console.log("forEach ___________________________");
 	forEach(array, item => console.log(item));
 
 	console.log("filter ___________________________");
@@ -123,13 +121,14 @@ try{
 	var a = [1, 2, 3, 4, 5];
 	console.log(a.slice(-1));
 	console.log(slice(a,-1));
-
+*/
 	console.log("reduce___________________________");
 	console.log(reduce(array, callbackForReduce, 20));
 	function callbackForReduce(previousValue, currentValue, index, array){
 		return previousValue + currentValue;
 	}
-	
+	console.log(array.reduce(callbackForReduce, 20));
+	/*
 	console.log("splice___________________________");
 	var myFish = array;
 	var removed1 = splice(-2, 1, 'hi',null, 6.4, undefined, Infinity);
@@ -140,7 +139,7 @@ try{
 	var removed = myFish.splice(-2, 1, 'hi',null, 6.4, undefined, Infinity);
 	console.log(myFish);
 	console.log(removed);
-
+*/
 }catch(e){
 	console.log(e.message);
 }
