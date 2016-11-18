@@ -1,0 +1,253 @@
+/**
+ * Global Reset of all HTML Elements
+ *
+ * Resetting all of our HTML Elements ensures a smoother
+ * visual transition between browsers. If you don't believe me,
+ * try temporarily commenting out this block of code, then go
+ * and look at Mozilla versus Safari, both good browsers with
+ * a good implementation of CSS. The thing is, all browser CSS
+ * defaults are different and at the end of the day if visual
+ * consistency is what we're shooting for, then we need to
+ * make sure we're resetting all spacing elements.
+ *
+ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+@font-face {
+  font-family: "Fira Sans";
+  src: url("../fonts/FiraSans-Light.eot");
+  src: url("../fonts/FiraSans-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/FiraSans-Light.woff") format("woff"), url("../fonts/FiraSans-Light.ttf") format("truetype"), url("../fonts/FiraSans-Light.svg") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fira Sans";
+  src: url("../fonts/FiraSans-Medium.eot");
+  src: url("../fonts/FiraSans-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/FiraSans-Medium.woff") format("woff"), url("../fonts/FiraSans-Medium.ttf") format("truetype"), url("../fonts/FiraSans-Medium.svg") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+body * {
+  font-family: 'Fira Sans', sans-serif;
+  color: #4f4f4f;
+  font-weight: 500;
+}
+body {
+  opacity: 0;
+  width: 459px;
+  margin: 0 auto;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+body.show {
+  opacity: 1;
+}
+.accordion_header {
+  text-align: center;
+  margin-top: 30px;
+}
+.main_accordion_wrap {
+  margin-top: 19px;
+}
+.main_accordion_wrap .accordion_item {
+  margin-bottom: 25px;
+}
+.main_accordion_wrap .accordion_item .accordion_link {
+  padding: 15px 21px 12px;
+  letter-spacing: 0.07px;
+  background: #e7e7e7;
+  text-decoration: none;
+  border-radius: 20px;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  display: block;
+  font-size: 15px;
+}
+.main_accordion_wrap .accordion_item .accordion_link:after {
+  content: "";
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 12px solid #ff8663;
+  transform: rotate(0deg);
+  position: absolute;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  margin-top: -5px;
+  right: 21px;
+  top: 50%;
+  width: 0;
+  height: 0;
+}
+.main_accordion_wrap .accordion_item .accordion_content {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  height: 0;
+  max-height: 0;
+  overflow: hidden;
+  font-weight: 300;
+  margin-top: -20px;
+  background: #e7e7e7;
+  border-radius: 0 0 20px 20px;
+}
+.main_accordion_wrap .accordion_item .accordion_content:before {
+  content: "";
+  height: 14px;
+  width: 100%;
+  display: block;
+}
+.main_accordion_wrap .accordion_item .accordion_content .accordion_child {
+  font-weight: 300;
+  font-size: 15px;
+  padding: 0 21px;
+  margin-bottom: 11px;
+  letter-spacing: 0.07px;
+}
+.main_accordion_wrap .accordion_item .accordion_content .accordion_child:last-child {
+  margin-bottom: 12px;
+}
+.main_accordion_wrap .accordion_item.current .accordion_content {
+  display: block;
+  height: 93px;
+  max-height: 93px;
+  margin-bottom: -20px;
+  padding-top: 20px;
+}
+.main_accordion_wrap .accordion_item.current .accordion_link:after {
+  transform: rotate(60deg);
+}
+.main_accordion_wrap .accordion_item.current .accordion_link,
+.main_accordion_wrap .accordion_item:hover .accordion_link {
+  background: #ff8663 !important;
+  color: #ffffff !important;
+}
+.main_accordion_wrap .accordion_item.current .accordion_link:after,
+.main_accordion_wrap .accordion_item:hover .accordion_link:after {
+  border-top-color: #ffffff;
+}
+.main_accordion_wrap .accordion_item:nth-child(odd) .accordion_link {
+  background: #696666;
+  color: #ffffff;
+}
