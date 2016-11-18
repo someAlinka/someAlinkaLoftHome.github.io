@@ -6,11 +6,10 @@ function scanDOM(){
 
 	(function fn(container){
 		for(child of container.childNodes){
-			
-			if(child.nodeName === "#text"){
+			if(child.nodeType === 3){
 				// запись тексттовых узлов
 				text++;
-			}else{
+			}else if(child.nodeType !== 8){
 				// Запись тэгов
 				tags[child.tagName] = (tags.hasOwnProperty(child.tagName))? tags[child.tagName]+1 : 1;
 
