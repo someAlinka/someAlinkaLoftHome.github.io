@@ -1,0 +1,21 @@
+html, body{
+	height: 100%;
+    width: 100%;
+    margin: 0;
+}
+h2{
+	margin: 0;
+	padding: 20px 25px;
+}
+#createDiv{
+	margin-left: 25px;
+}
+.randomDiv{
+	width: 140px;
+	height: 140px;
+	position: absolute;
+	text-align: center;
+	cursor: pointer;
+	z-index: 99;
+
+}
