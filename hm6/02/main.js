@@ -13,15 +13,15 @@ var Promise = new Promise(function(resolve, reject) {
 
 Promise.then(function(response) {
     var jsonObj = JSON.parse(response);
-    var arrCountrys = [];
+    var arrPlaces = [];
     for(contry of jsonObj){ // in array
-        arrCountrys.push(contry.name);
+        arrPlaces.push(contry.name);
     }
-    arrCountrys.sort(function (a, b) { // sort
+    arrPlaces.sort(function (a, b) { // sort
       return a.localeCompare(b);
     });
-    for (var i = 0; i < arrCountrys.length; i++) { //write
-        countrysDiv.innerHTML = (!i)? arrCountrys[i] :countrysDiv.innerHTML + ", " + arrCountrys[i];
+    for (var i = 0; i < arrPlaces.length; i++) { //write
+        placesDiv.innerHTML = (!i)? arrPlaces[i] :placesDiv.innerHTML + ", " + arrPlaces[i];
     };
 }, function(err) {
     console.log('ajax error');
