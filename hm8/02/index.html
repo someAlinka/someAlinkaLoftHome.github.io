@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home work 8. Task 2</title>
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+</head>
+<body>
+    <script src="http://vk.com/js/api/openapi.js"></script>
+    <div class="container">
+        <h1 id="headerInfo"></h1>
+    </div>
+    <div id="results"></div>
+    <script src="main.js"></script>
+    <script type="text/x-handlebars-template" id="friendsListTemplate">
+        <table id="friendsList">
+            <tr>
+                <td>Фото</td>
+                <td>ФИО</td>
+                <td>Дата рождения</td>
+                <td>Возраст</td>
+            </tr>
+            {{#each list}}
+                <tr>
+                    <td><img src="{{photo_50}}" alt=""></td>
+                    <td>{{first_name}} {{last_name}} {{nickname}}</td>
+                    <td>{{bdate}}</td>
+                    <td>{{age bdate}}</td>
+                </tr>
+            {{/each}}
+        </table>
+    </script>
+</body>
+</html>
