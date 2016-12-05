@@ -1,0 +1,9 @@
+#placesList{
+	list-style: none;
+	cursor: pointer;
+	margin-left: 0;
+	padding: 0;
+}
+.hide{
+	display: none;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home work 8. Task 1</title>
+	<link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+</head>
+<body>
+	<h2 class="header2">Задание номер рас!</h2>
+	<input type="text" id="placesInput">
+	<ul id="placesList"></ul>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/x-handlebars-template" id="listTemplate">
+		{{#each list}}
+			<li>{{this}}</li>
+		{{/each}}
+	</script>
+</body>
+</html>
